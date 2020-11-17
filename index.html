@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+        // 18 fotbalisti
+        // Definim locul in care stocam daca un jucator este titular sau nu
+        const playersStarterFlags = [];
+
+        // Definesc cati jucatori am in total
+        const playersCount = 18;
+
+        // CurrentPlayer ma ajuta sa trec prin fiecare element dintre cei 18
+        let currentPlayer = 0;
+
+        while (currentPlayer < playersCount) {
+            // Initializez semaforul fiecarui jucator cu false - Initial nu stim cine va juca
+            // Pe pozitia(indexul) currentPlayer a array-ului playersStartFlags punem valoarea false
+            playersStarterFlags[currentPlayer] = false;
+
+            // Trec la jucatorul urmator
+            currentPlayer = currentPlayer + 1;
+        }
+
+        playersStarterFlags[153] = true;
+
+        const coachAnswer = prompt("Care este numarul jucatorului ce va fi portar titular?");
+        const goalkeeperNumber = parseInt(coachAnswer);
+
+        // Bifez numarul portarului ca titular
+        if (goalkeeperNumber < 18) {
+            playersStarterFlags[goalkeeperNumber] = true;
+        }
+
+        console.log(playersStarterFlags);
+
+        const coachStrikerAnswer = prompt("Care este numarul atacantului titular?");
+        const strikerNumber = parseInt(coachStrikerAnswer);
+
+        if (strikerNumber < 18 && playersStarterFlags[strikerNumber] != true) {
+            playersStarterFlags[strikerNumber] = true;
+        }
+
+        console.log(playersStarterFlags);
+
+
+
+        /*
+            6/49
+
+            Se extrag 6 numere la intamplarea (aleatoriu/random);
+
+            Se marcheaza numerele extrase.
+
+            La finalul extragerii se afiseaza numerele extrase.
+        */
+
+
+        const numbersDraw = []; //49 de elemente
+
+        // Se initalizeaza array-ul cu false pentru fiecare numar
+
+        //Se fac 6 extrageri 
+            // Se genereaza un numar aleatoriu intre 1 - 49
+            // Se verifica daca numarul a fost deja extras
+                    // Daca a fost deja extras. mai generez un numar random pana gasesc unul ne-extras
+
+
+        // Afisez cele 6 numere, plecand de la semafoarele numbersDraw
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
